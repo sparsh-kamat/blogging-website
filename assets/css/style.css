@@ -1,0 +1,21 @@
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+#footer p{
+    padding-top: 15px;   
+}
+
+#footer a{
+    color: #139971;
+    
+    text-decoration: none;
+}
+
+.row{
+    margin-right: 0%;
+    margin-left: 0%;
+}

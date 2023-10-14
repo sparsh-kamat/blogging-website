@@ -43,11 +43,12 @@ if (isset($_POST['registerbtn'])) {
 }
 
 include(ROOT_PATH . "/assets/include/head.php");
-include(ROOT_PATH . "/assets/include/navbar.php");
+
 ?>
 
 
 <body>
+    <?php include(ROOT_PATH . "/assets/include/navbar.php"); ?>
     <div class="py-5">
         <div class="container">
             <div class="row  justify-content-center pt-5">

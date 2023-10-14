@@ -8,7 +8,7 @@ $page_title = 'Home | SparshBlogs';
 <body>
   <?php include_once('assets/include/navbar.php'); ?>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <h1 class="text-center mt-5">Welcome to SparshBlogs</h1>

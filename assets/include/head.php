@@ -22,4 +22,16 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
+
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/style.css' ?>">
+
+  <style>
+    body {
+      background-image: url('<?php echo BASE_URL . '/assets/images/background.jpg' ?>');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
 </head>

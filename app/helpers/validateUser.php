@@ -24,7 +24,7 @@ function validateUser($user)
     if ($existingUser) {
             array_push($errors, 'Email already exists');   
     }
-    
+
     return $errors;
 }
 
@@ -50,8 +50,13 @@ function validateLogin($user)
 {
     $errors = array();
 
-    if (empty($user['username'])) {
-        array_push($errors, 'Username is required');
+    $existingUser = selectOne('users', ['email' => $user['email']]);
+    if (!$existingUser) {
+            array_push($errors, "Email doesn't exists");   
+    }
+
+    if (empty($user['email'])) {
+        array_push($errors, 'email is required');
     }
 
     if (empty($user['password'])) {
