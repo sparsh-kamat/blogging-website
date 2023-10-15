@@ -1,11 +1,9 @@
-<?php 
-include("../../path.php"); 
-include(ROOT_PATH . "/app/helpers/dbaccess.php");
-
+<?php
 $errors = array();
 $success = array();
 $email = '';
-
+include("../../path.php"); 
+include(ROOT_PATH . "/app/helpers/dbaccess.php");
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
     $verify_query = "SELECT * FROM users WHERE token='$token' LIMIT 1";
@@ -78,3 +76,8 @@ include(ROOT_PATH . "/assets/include/head.php");
                 </div>
             </div>
         </div>
+    </div>
+    <?php include(ROOT_PATH . "/assets/include/foot.php"); ?>
+</body>
+
+</html>

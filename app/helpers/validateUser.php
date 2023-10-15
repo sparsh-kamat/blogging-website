@@ -29,20 +29,15 @@ function validateUser($user)
 }
 
 function validatechangepass($user){
-    $errors = array();
-    if (empty($user['email'])) {
-        array_push($errors, 'Email is required');
-    }
-
+    $errors = array();    
     if (empty($user['password'])) {
         array_push($errors, 'Password is required');
     }
 
-    if ($user['passwordConf'] !== $user['password']) {
+    if ($user['confirmpassword'] !== $user['password']) {
         array_push($errors, 'Password do not match');
     }
-    return $errors;
-    
+    return $errors; 
 }
 
 

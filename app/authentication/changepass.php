@@ -1,12 +1,7 @@
 <?php
-$page_title = 'Register | SparshBlogs';
-$username = '';
-$email = '';
-$password = '';
-$confirmpassword = '';
+$page_title = 'Change Password | SparshBlogs';
 $errors = array();
 $success = array();
-
 include("../../path.php");
 include(ROOT_PATH . "/app/authentication/email/emailhelper.php");
 include(ROOT_PATH . "/app/helpers/validateUser.php");
@@ -15,8 +10,10 @@ include(ROOT_PATH . "/assets/include/head.php");
 ?>
 
 
+
 <body>
     <?php include(ROOT_PATH . "/assets/include/navbar.php"); ?>
+
     <div class="py-5">
         <div class="container">
             <div class="row  justify-content-center pt-5">
@@ -24,21 +21,17 @@ include(ROOT_PATH . "/assets/include/head.php");
                     <div class="card shadow">
                         <div class="card-header">
                             <?php include(ROOT_PATH . "/assets/include/messages.php"); ?>
-                            <h4 class="text-center mt-1 ">Registration Form</h4>
+                            <h4 class="text-center">Change Password</h4>
                         </div>
 
                         <div class="card-body">
-
-                            <form class="form-floating" action="register.php" method="POST">
-                                <div class="form-floating mb-3 ">
-                                    <input type="text" name="username" class="form-control" placeholder="Enter Username"
-                                        required>
-                                    <label for="floatingInput">Username</label>
-                                </div>
-
+                            <form class="form-floating" action="" method="POST">
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" name="email" placeholder="Email" required>
-                                    <label for="floatingInput" class="text-center">Email Address</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Email" disabled
+                                        readonly>
+                                    <label for="floatingInput" class="text-center">
+                                        <?php echo $_GET['email']; ?>
+                                    </label>
                                 </div>
 
                                 <div class="form-floating mb-3 ">
@@ -53,7 +46,8 @@ include(ROOT_PATH . "/assets/include/head.php");
                                     <label for="floatingInput">Confirm Password</label>
                                 </div>
                                 <div class="d-grid col-6 mx-auto">
-                                    <button type="submit" name="registerbtn" class="btn btn-primary">Register</button>
+                                    <button type="submit" name="changepass" class="btn btn-primary">Change
+                                        Password</button>
                                 </div>
                             </form>
                         </div>
@@ -62,7 +56,7 @@ include(ROOT_PATH . "/assets/include/head.php");
             </div>
         </div>
     </div>
-
     <?php include(ROOT_PATH . "/assets/include/foot.php"); ?>
+</body>
 
-    </html>
+</html>
