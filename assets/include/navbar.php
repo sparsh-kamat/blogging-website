@@ -1,57 +1,55 @@
-<div class="bg-dark">
-    <div class="row">
-        <div class="col-md-12">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <!-- make brandingto -->
-                <div class="container-fluid ">
-                    <a class="navbar-brand" href="<?php echo BASE_URL . '/index.php' ?>">SparshBlogs</a>
+<div class="row">
+    <nav id="topbar" class="navbar navbar-expand-lg navbar-dark bg-dark col-md-12">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="<?php echo BASE_URL . '/index.php' ?>">SparshBlogs</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="<?php echo BASE_URL . '/index.php' ?>">Home</a>
+                    </li>
+                    <?php if (!isset($_SESSION['id'])) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="<?php echo BASE_URL . '/app/authentication/register.php' ?>">Register</a>
+                        </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo BASE_URL . '/app/authentication/login.php' ?>">Login</a>
+                        </li>
+                    <?php } ?>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto ">
+                    <?php if (isset($_SESSION['id'])) { ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <!-- add user avatar -->
+                                <!-- <span class="fa-solid fa-user"></span> -->
+                                <i class="nav-icon bi bi-person-fill"></i>
+                                <?php echo $_SESSION['username']; ?>
+                            </a>
 
-
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="<?php echo BASE_URL . '/index.php' ?>">Home</a>
-                            </li>
-
-
-
-                            <?php if (isset($_SESSION['admin'])) { ?>
-                                <?php if ($_SESSION['admin'] == 1) { ?>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="<?php echo BASE_URL . '/admin/dashboard.php' ?>">Dashboard</a>
-                                    </li>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <!-- if admin, show dashboard -->
+                                <?php if (isset($_SESSION['admin'])) { ?>
+                                    <?php if ($_SESSION['admin'] == 1) { ?>
+                                        <li><a class="dropdown-item"
+                                                href="<?php echo BASE_URL . '/admin/dashboard.php' ?>">Dashboard</a>
+                                        </li>
+                                    <?php } ?>
                                 <?php } ?>
-                            <?php } ?>
-
-                            <?php if (!isset($_SESSION['id'])) { ?>
-                                <li class="nav-item">
-                                    <a class="nav-link"
-                                        href="<?php echo BASE_URL . '/app/authentication/register.php' ?>">Register</a>
-                                </li>
-                            <?php } ?>
-
-                            <?php if (!isset($_SESSION['id'])) { ?>
-                                <li class="nav-item">
-                                    <a class="nav-link"
-                                        href="<?php echo BASE_URL . '/app/authentication/login.php' ?>">Login</a>
-                                </li>
-                            <?php } ?>
-
-                            <?php if (isset($_SESSION['id'])) { ?>
-                                <li class="nav-item">
-                                    <a class="nav-link"
+                                <li><a class="dropdown-item"
                                         href="<?php echo BASE_URL . '/app/authentication/logout.php' ?>">Logout</a>
                                 </li>
-                            <?php } ?>
+                            </ul>
+                        </li>
+                    <?php } ?>
 
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+                </ul>
+            </div>
         </div>
-    </div>
+    </nav>
+
+
 
 </div>

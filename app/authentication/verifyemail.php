@@ -4,6 +4,8 @@ $success = array();
 $email = '';
 include("../../path.php"); 
 include(ROOT_PATH . "/app/helpers/dbaccess.php");
+
+
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
     $verify_query = "SELECT * FROM users WHERE token='$token' LIMIT 1";

@@ -3,17 +3,27 @@ $page_title = 'Reset Password | SparshBlogs';
 $errors = array();
 $success = array();
 $email = '';
+
+// includes the path to the root folder and the database connection
 include("../../path.php");
+
+// includes the database connection file and the helper functions
 include(ROOT_PATH . "/app/helpers/dbaccess.php");
+
+// includes the email sending function
 include(ROOT_PATH . "/app/authentication/email/emailhelper.php");
+
+// includes the functions for validating the user form
 include(ROOT_PATH . "/app/controllers/users.php");
+
+//includes the header file
 include(ROOT_PATH . "/assets/include/head.php");
 ?>
 
 
 
 <body>
-
+    <!-- includes the navbar -->
     <?php include(ROOT_PATH . "/assets/include/navbar.php"); ?>
     <div class="py-5">
         <div class="container">
@@ -21,9 +31,8 @@ include(ROOT_PATH . "/assets/include/head.php");
                 <div class="col-md-6">
                     <div class="card shadow">
                         <div class="card-header text-center">
-                            <?php
-                            include(ROOT_PATH . "/assets/include/messages.php");
-                            ?>
+                            <!-- include the messages.php file -->
+                            <?php include(ROOT_PATH . "/assets/include/messages.php"); ?>
                             <h4>Reset Password</h4>
                         </div>
                         <div class="card-body">

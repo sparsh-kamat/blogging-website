@@ -7,15 +7,25 @@ $confirmpassword = '';
 $errors = array();
 $success = array();
 
+// includes the path to the root folder and the database connection
 include("../../path.php");
+
+// includes the email sending function
 include(ROOT_PATH . "/app/authentication/email/emailhelper.php");
+
+// includes the functions for validating the user form
 include(ROOT_PATH . "/app/helpers/validateUser.php");
+
+//includes the functions for the register button
 include(ROOT_PATH . "/app/controllers/users.php");
+
+//includes the header file
 include(ROOT_PATH . "/assets/include/head.php");
 ?>
 
 
 <body>
+    <!-- includes the navbar -->
     <?php include(ROOT_PATH . "/assets/include/navbar.php"); ?>
     <div class="py-5">
         <div class="container">
@@ -23,6 +33,7 @@ include(ROOT_PATH . "/assets/include/head.php");
                 <div class="col-md-4">
                     <div class="card shadow">
                         <div class="card-header">
+                            <!-- include the messages.php file -->
                             <?php include(ROOT_PATH . "/assets/include/messages.php"); ?>
                             <h4 class="text-center mt-1 ">Registration Form</h4>
                         </div>

@@ -23,15 +23,21 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
 
+  <!-- CKEditor -->
+  <script src="https://kit.fontawesome.com/679a8e57ca.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
   <!-- Custom Styling -->
-  <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/style.css' ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . '/assets/css/style.css' ?>">
 
   <style>
-    body {
-      background-image: url('<?php echo BASE_URL . '/assets/images/background.jpg' ?>');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-    }
+   body {
+    background-image: url('<?php echo BASE_URL . '/assets/images/background.jpg' ?>');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
   </style>
 </head>

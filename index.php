@@ -11,7 +11,10 @@ $page_title = 'Home | SparshBlogs';
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="text-center mt-5">Welcome to SparshBlogs</h1>
+        <h1 class="text-center mt-5">Welcome to SparshBlogs <?php if (isset($_SESSION['username'])) {
+                                                                echo  $_SESSION['username'];
+                                                              } ?></h1>
+
       </div>
     </div>
   </div>

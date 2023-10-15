@@ -1,8 +1,31 @@
+
+body {
+    background-image:  url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;    
+}
+
+#sidebar {
+    position: fixed;
+    padding-top: 50px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 1;
+    background: #22282e;
+}
+
+#topbar{
+    z-index: 999;
+}
+
 #footer{
     position: fixed;
     bottom: 0;
     width: 100%;
-
 }
 
 #footer p{
@@ -11,11 +34,10 @@
 
 #footer a{
     color: #139971;
-    
     text-decoration: none;
 }
 
 .row{
     margin-right: 0%;
-    margin-left: 0%;
+    margin-left: 0%; 
 }
