@@ -35,6 +35,9 @@ if (isset($_POST['loginbtn'])) {
             if ($user['verified'] == '1') {
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['verified'] = $user['verified'];
+                $_SESSION['created_at'] = $user['created_at'];
                 $_SESSION['admin'] = $user['admin'];
                 $_SESSION['message'] = 'You are now logged in';
                 $_SESSION['type'] = 'success';

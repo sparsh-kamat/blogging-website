@@ -33,11 +33,6 @@
   <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . '/assets/css/style.css' ?>">
 
   <style>
-   body {
-    background-image: url('<?php echo BASE_URL . '/assets/images/background.jpg' ?>');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
+   
   </style>
 </head>
