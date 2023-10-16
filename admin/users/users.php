@@ -1,4 +1,6 @@
 <?php
+
+$page_title = "Admin Section - Manage Users";
 //include the database connection file and the helper functions
 include('../../path.php');
 include(ROOT_PATH . "/app/helpers/dbaccess.php");
@@ -18,9 +20,9 @@ usort($users, function ($a, $b) {
     <div class="container-fluid  ">
         <div class="row">
             <div class="col-md-9 mx-auto">
-                <h3 class="text-center  mt-2">Manage Posts</h3>
-                <table class="table table-hover" id="post-table">
-                    <thead>
+                <h2 class="text-center  mt-2 fw-bold">Manage Users</h2>
+                <table class="table table-hover table-striped table-bordered" id="post-table">
+                    <thead class="table-dark">
                         <tr>
                             <th scope="col" class="col-md-1 text-center">ID</th>
                             <th scope="col" class="col-md-1 text-center">Admin</th>
@@ -32,22 +34,22 @@ usort($users, function ($a, $b) {
                     <tbody>
                         <?php foreach ($users as $key => $user) { ?>
                             <tr>
-                                <td class="col-md-1 text-center align-middle">
+                                <td class="col-md-1 text-center align-middle font-monospace">
                                     <?php echo $user['id']; ?>
                                 </td>
-                                <td class="col-md-1 text-center align-middle">
+                                <td class="col-md-1 text-center align-middle font-monospace">
                                     <?php echo $user['admin']; ?>
                                 </td>
-                                <td class="col-md-3 text-center align-middle">
+                                <td class="col-md-3 text-center align-middle font-monospace">
                                     <?php echo $user['username']; ?>
                                 </td>
-                                <td class="col-md-3 text-center align-middle">
+                                <td class="col-md-3 text-center align-middle font-monospace">
                                     <?php echo $user['email']; ?>
                                 </td>
                                 <td id="buttonholder" class=" d-flex justify-content-center ">
-                                    <a href="#" class="btn btn-success">Edit</a>
-                                    <a href="#" class="btn btn-danger">Delete</a>
-                                    <a href="#" class="btn btn-primary">View</a>
+                                    <a href="#" class="btn btn-success font-monospace">Edit</a>
+                                    <a href="#" class="btn btn-danger font-monospace">Delete</a>
+                                    <a href="#" class="btn btn-primary font-monospace">View</a>
                                 </td>
                             </tr>
                         <?php } ?>

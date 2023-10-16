@@ -5,6 +5,7 @@ include('../../path.php');
 
 include(ROOT_PATH . "/app/helpers/dbaccess.php");
 
+$page_title = "Admin Section - Manage Topics";
 //select all topics from the database
 $topics = selectAll('topics');
 
@@ -20,9 +21,9 @@ $topics = selectAll('topics');
         <div class="container-fluid  ">
             <div class="row">
                 <div class="col-md-9 mx-auto">
-                    <h3 class="text-center  mt-2">Manage Topics</h3>
-                    <table class="table table-hover" id="post-table">
-                        <thead>
+                    <h2 class="text-center  mt-2 fw-bold">Manage Topics</h2>
+                    <table class="table table-hover table-striped table-bordered" id="post-table">
+                        <thead class="table-dark">
                             <tr>
                                 <th scope="col" class="col-md-1 text-center">Sr No.</th>
                                 <th scope="col" class="col-md-5 text-center">Topic</th>
@@ -33,12 +34,12 @@ $topics = selectAll('topics');
                             <!-- php for loop for each topic -->
                             <?php foreach ($topics as $key => $topic) { ?>
                                 <tr>
-                                    <td class="col-md-1 text-center"><?php echo $key + 1; ?></td>
-                                    <td class="col-md-5 text-center"><?php echo $topic['name']; ?></td>
+                                    <td class="col-md-1 text-center font-monospace"><?php echo $key + 1; ?></td>
+                                    <td class="col-md-5 text-center font-monospace"><?php echo $topic['name']; ?></td>
                                     <td id="topicbuttonholder" class="d-flex justify-content-center ">
-                                        <a href="#" class="btn btn-success">Edit</a>
-                                        <a href="#" class="btn btn-danger">Delete</a>
-                                        <a href="#" class="btn btn-primary">View</a>
+                                        <a href="#" class="btn btn-success font-monospace">Edit</a>
+                                        <a href="#" class="btn btn-danger font-monospace">Delete</a>
+                                        <a href="#" class="btn btn-primary font-monospace">View</a>
 
                                     </td>
                                 </tr>

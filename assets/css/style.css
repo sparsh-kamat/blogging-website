@@ -1,11 +1,11 @@
-
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #386e5e;
-    background-repeat: no-repeat;
+    /* background-color: #386e5e; */
+    background: linear-gradient(45deg, #4158d0, #c850c0);
+     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;    
+    background-position: center;
 }
 
 #sidebar {
@@ -18,45 +18,45 @@ body {
     background: #22282e;
 }
 
-#topbar{
+#topbar {
     z-index: 1;
 }
 
-#footer{
+#footer {
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-#footer p{
-    padding-top: 15px;   
+#footer p {
+    padding-top: 15px;
 }
 
-#footer a{
+#footer a {
     color: #139971;
     text-decoration: none;
 }
 
-.row{
+.row {
     margin-right: 0%;
-    margin-left: 0%; 
+    margin-left: 0%;
 }
 
 .table-beige {
-    background-color: #494914; /* Use your desired beige color code */
+    background-color: #494914;
+    /* Use your desired beige color code */
 }
 
-#post-table{
-    --bs-table-bg: #6d9e8a;
-    --bs-table-border-color: #0e2b1f;
-}
 
-#buttonholder a, #buttonholder button{
+
+#buttonholder a,
+#buttonholder button {
     margin-left: 10px;
     margin-right: 10px;
 }
 
-#topicbuttonholder a{
+#topicbuttonholder a {
     margin-left: 20px;
     margin-right: 20px;
 }
+

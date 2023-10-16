@@ -1,23 +1,24 @@
 <?php
 $errors = array();
 $success = array();
+$page_title = "Admin Section - Manage Posts";
 
 //include the database connection file and the helper functions
 include('../../path.php');
-
 include(ROOT_PATH . "/app/helpers/dbaccess.php");
 
-//select all posts from the database
 $posts = selectAll('posts');
+
+//sort the posts by most recent first
+usort($posts, function ($b, $a) {
+    return $a['created_at'] <=> $b['created_at'];
+});
 
 //select all users from the database
 $users = selectAll('users');
 
 //include post.php file
 include(ROOT_PATH . "/app/controllers/posts.php");
-
-
-
 ?>
 
 <?php include(ROOT_PATH . "/assets/include/head.php"); ?>
@@ -32,19 +33,18 @@ include(ROOT_PATH . "/app/controllers/posts.php");
             <div class="col-md-9 mx-auto">
                 <!-- include the messages.php file -->
                 <?php if (count($errors) > 0 || count($success) > 0) { ?>
-                <div class="row mt-5">
-                    <div class="col-md-12">
-                        <?php include(ROOT_PATH . "/assets/include/messages.php"); ?>
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <?php include(ROOT_PATH . "/assets/include/messages.php"); ?>
+                        </div>
                     </div>
-                </div>
                 <?php } ?>
-                
-                <h3 class="text-center  mt-2">Manage Posts</h3>
-                <table class="table table-hover" id="post-table">
-                    <thead>
-                        <tr>
 
-                            <th scope="col" class="col-md-6 text-center">Title</th>
+                <h2 class="text-center bold mt-2 fw-bold">Manage Posts</h2>
+                <table class="table table-hover table-light table-striped table-bordered" id="post-table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" class="col-md-6 text-center text-wrap">Title</th>
                             <th scope="col" class="col-md-2 text-center">Author</th>
                             <th scope="col" class="col-md-2 text-center">Date</th>
                             <th scope="col" class="text-center ">Action</th>
@@ -55,16 +55,16 @@ include(ROOT_PATH . "/app/controllers/posts.php");
 
                         <?php foreach ($posts as $key => $post) { ?>
                             <tr>
-                                <td class="col-md-5 text-center align-middle">
+                                <td class="col-md-5 text-center align-middle font-monospace">
                                     <?php echo $post['title']; ?>
                                 </td>
-                                <td class="col-md-1 text-center align-middle">
+                                <td class="col-md-1 text-center align-middle font-monospace">
                                     <?php
                                     $user = selectOne('users', ['id' => $post['user_id']]);
                                     echo $user['username'];
                                     ?>
                                 </td>
-                                <td class="col-md-1 text-center align-middle">
+                                <td class="col-md-1 text-center align-middle font-monospace">
                                     <?php echo $post['created_at']; ?>
                                 </td>
                                 <td id="buttonholder" class="row d-flex justify-content-center ">
@@ -85,11 +85,10 @@ include(ROOT_PATH . "/app/controllers/posts.php");
                                             <?php } ?>
 
                                             <!-- show the edit button -->
-                                            <a href="<?php echo BASE_URL . '/admin/posts/edit.php?id=' . $post['id']; ?>"
-                                                class="btn btn-primary">Edit</a>
+                                            <button type="submit" name="edit" class="btn btn-primary">Edit</button>
                                             <!-- show the delete button -->
-                                            <a href="<?php echo BASE_URL . '/admin/posts/delete.php?id=' . $post['id']; ?>"
-                                                class="btn btn-danger">Delete</a>
+                                            <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+
                                         </div>
 
                                     </form>

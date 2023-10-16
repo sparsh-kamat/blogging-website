@@ -5,21 +5,39 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto ">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                            href="<?php echo BASE_URL . '/index.php' ?>">Home</a>
+                        <a class="nav-link <?php
+                        if ($page_title == 'Home | SparshBlogs') {
+                            echo 'active';
+                        }
+                        ?>" aria-current="page" href="<?php echo BASE_URL . '/index.php' ?>">Home</a>
                     </li>
 
                     <!-- add manage posts users and topics-->
                     <?php if (isset($_SESSION['admin'])) { ?>
                         <?php if ($_SESSION['admin'] == 1) { ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo BASE_URL . '/admin/posts/posts.php' ?>">Posts</a>
+                                <a class="nav-link 
+                                <?php
+                                if ($page_title == 'Admin Section - Manage Posts') {
+                                    echo 'active';
+                                }
+                                ?>" href="<?php echo BASE_URL . '/admin/posts/posts.php' ?>">Posts</a>
+
+                            <li class="nav-item">
+                                <a class="nav-link
+                                <?php
+                                if ($page_title == 'Admin Section - Manage Users') {
+                                    echo 'active';
+                                }
+                                ?>" href="<?php echo BASE_URL . '/admin/users/users.php' ?>">Users</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo BASE_URL . '/admin/users/users.php' ?>">Users</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo BASE_URL . '/admin/topics/topics.php' ?>">Topics</a>
+                                <a class="nav-link 
+                                <?php
+                                if ($page_title == 'Admin Section - Manage Topics') {
+                                    echo 'active';
+                                }
+                                ?>" href="<?php echo BASE_URL . '/admin/topics/topics.php' ?>">Topics</a>
                             </li>
                         <?php } ?>
                     <?php } ?>
