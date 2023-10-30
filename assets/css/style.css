@@ -26,10 +26,12 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
+    margin-top: 20px;
 }
 
 #footer p {
     padding-top: 15px;
+    
 }
 
 #footer a {
@@ -60,3 +62,30 @@ body {
     margin-right: 20px;
 }
 
+.card-img img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    /* make height half of container */
+    height: 150px;
+    object-fit: fill; /* This will ensure the image covers the specified height without distortion */
+    width: 100%; /* Maintain the image's original aspect ratio while fitting it within the fixed height */
+  }
+  .card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background: #c1cbd4;
+  height: 100%;
+}
+
+
+
+.card-title {
+  margin-bottom: 0.75rem;
+}
+
+#latest-post {
+    max-height: 200px;
+}

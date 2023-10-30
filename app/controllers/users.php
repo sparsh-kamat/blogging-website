@@ -1,4 +1,46 @@
 <?php
+
+if (isset($_POST['make-admin'])) {
+    $id = $_POST['id'];
+    $admin = update('users', $id, ['admin' => 1]);
+    if ($admin) {
+        array_push($success, "User made admin successfully");
+        header("Refresh:1");
+    } else {
+        array_push($errors, "Failed to make user admin");
+    }
+}
+
+//remove admin button
+
+if (isset($_POST['remove-admin'])) {
+    $id = $_POST['id'];
+    $admin = update('users', $id, ['admin' => 0]);
+    if ($admin) {
+        array_push($success, "Admin removed successfully");
+        header("Refresh:1");
+    } else {
+        array_push($errors, "Failed to remove admin");
+    }
+}
+
+//delete user button
+if (isset($_POST['delete-user'])) {
+    $id = $_POST['id'];
+    $query=" DELETE FROM users WHERE id=$id";
+    $stmt = $conn->prepare($query);
+    $delete = $stmt->execute();
+
+    if ($delete) {
+        array_push($success, "User deleted successfully");
+        header("Refresh:1");
+    } else {
+        array_push($errors, "Failed to delete user");
+    }
+}
+
+
+
 //register button
 if (isset($_POST['registerbtn'])) {
     $errors = validateUser($_POST);

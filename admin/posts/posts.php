@@ -26,9 +26,19 @@ include(ROOT_PATH . "/app/controllers/posts.php");
 <body>
 
     <?php include(ROOT_PATH . "/assets/include/navbar.php"); ?>
+    <!-- add post row -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9 mx-auto d-flex justify-content-center align-items-center flex-column">
+                <h2 class="text-center bold mt-2 fw-bold">Add Post</h2>
+                <a href="<?php echo BASE_URL . '/admin/posts/create.php'; ?>" class="btn btn-primary mt-1">Add Post</a>
+            </div>
+        </div>
+    </div>
 
 
-    <div class="container-fluid  ">
+
+    <div class="container-fluid mb-5 ">
         <div class="row">
             <div class="col-md-9 mx-auto">
                 <!-- include the messages.php file -->
@@ -102,12 +112,14 @@ include(ROOT_PATH . "/app/controllers/posts.php");
         </div>
 
 
+    </div>
 
 
-
-        <?php include(ROOT_PATH . "/assets/include/foot.php"); ?>
+    <?php include(ROOT_PATH . "/assets/include/foot.php"); ?>
 
 </body>
 
 
 </html>
+
+<!-- remove footer  -->

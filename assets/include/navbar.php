@@ -1,9 +1,11 @@
 <div class="row">
     <nav id="topbar" class="navbar navbar-expand-lg navbar-dark bg-dark col-md-12">
         <div class="container-fluid ">
-            <a class="navbar-brand " href="<?php echo BASE_URL . '/index.php' ?>">SparshBlogs</a>
+            <a class="navbar-brand fw-bold" href="<?php echo BASE_URL . '/index.php' ?>">SparshBlogs</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto ">
+                    <!-- search bar -->
+                    
                     <li class="nav-item">
                         <a class="nav-link <?php
                         if ($page_title == 'Home | SparshBlogs') {
@@ -11,6 +13,7 @@
                         }
                         ?>" aria-current="page" href="<?php echo BASE_URL . '/index.php' ?>">Home</a>
                     </li>
+                    
 
                     <!-- add manage posts users and topics-->
                     <?php if (isset($_SESSION['admin'])) { ?>
